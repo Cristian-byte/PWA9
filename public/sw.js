@@ -120,4 +120,14 @@ self.addEventListener( 'fetch', e => {
 
 });
 
+// tareas asincronas
+self.addEventListener('sync', e => {
+    console.log('SW: Sync');
 
+    if (e.tag === 'nuevo-post') {
+
+        //postear a DB cuando hay conexion
+
+        //e.waitUntil( ??? );
+    }
+});
