@@ -74,10 +74,6 @@ self.addEventListener('activate', e => {
 
 });
 
-
-
-
-
 self.addEventListener( 'fetch', e => {
 
     /** const respuesta = caches.match( e.request ).then( res => {
@@ -127,7 +123,7 @@ self.addEventListener('sync', e => {
     if (e.tag === 'nuevo-post') {
 
         //postear a DB cuando hay conexion
-
-        //e.waitUntil( ??? );
+        const respuesta = postearMensajes();
+        e.waitUntil( respuesta );
     }
 });
